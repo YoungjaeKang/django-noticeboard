@@ -20,5 +20,6 @@ from first import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('first.urls')),
+    path('first/', include('first.urls')),
+    path('second/', include('second.urls')),
 ]
