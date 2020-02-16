@@ -9,6 +9,7 @@
             <div class="card border-secondary">
                 <h5 class="card-title">{{ item.name }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{ item.address }}</h6>
+                <p class="card-text">리뷰: {{ item.reviews_count }}개, 평점: {{ item.average_point }}점</p> 
                 <p class="card-text">음식점 설명</p>
                 <div>    
                     <a href="{% url 'restaurant-detail' id=item.id %}" class="card-link">자세히 보기</a>
@@ -25,7 +26,7 @@
                 <span class="step-links text-center" style="width:100%;">
                     {% if restaurants.has_previous %}
                         <a href="?page=1">&laquo;</a>
-                        <a href="?page={{ restaurants.previous_page_number }}">{{ restaurantes.previous_page_number }}</a>
+                        <a href="?page={{ restaurants.previous_page_number }}">{{ restaurants.previous_page_number }}</a>
                     {% endif %}
                     <span class="current">
                         {{ restaurants.number }}
@@ -33,7 +34,7 @@
                 
                     {% if restaurants.has_next %}
                         <a href="?page={{ restaurants.next_page_number }}">{{ restaurants.next_page_number }}</a>
-                        <a href="?page={{ restaurants.paginator.num_pages }}">{{ restaurantes.paginator.num_pages }}</a>
+                        <a href="?page={{ restaurants.paginator.num_pages }}">{{ restaurants.paginator.num_pages }}</a>
                     {% endif %}
                 </span>
             </div>
